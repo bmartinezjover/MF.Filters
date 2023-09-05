@@ -1,0 +1,15 @@
+{
+  "filterItems": [
+    {
+      "id": 1,
+      "groupName": "pills",
+      "color": "#B6DBD8",
+      "items": {
+        "id": 1,
+        "itemName": "pills",
+        "stock": { "1": 200, "2": 150 },
+        "total": 500
+      }
+    }
+  ]
+}
