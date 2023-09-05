@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import MoleculeSupplyBox from '../components/Molecules/MoleculeSupplyBox.vue'
+import MoleculePickItem from '../components/Molecules/MoleculePickItem.vue'
 </script>
 
 <template>
@@ -22,6 +23,9 @@ import MoleculeSupplyBox from '../components/Molecules/MoleculeSupplyBox.vue'
       </div>
       <div class="supply">
         <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+      </div>
+      <div class="test">
+        <MoleculePickItem />
       </div>
     </div>
   </div>
