@@ -9,7 +9,7 @@ const color = computed(() => '#B6DBD8')
 <template>
   <div id="selected-item">
     <div id="selected-item-description">
-      <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+      <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
     </div>
     <div id="selected-item-information">
       <div class="stock"><CircleProgress :percent="40" :fill-color="color" /></div>
