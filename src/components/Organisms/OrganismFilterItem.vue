@@ -6,22 +6,22 @@ import MoleculeSupplyBox from '../Molecules/MoleculeSupplyBox.vue'
   <div id="filter">
     <div class="supplies">
       <div class="supply">
-        <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+        <MoleculeSupplyBox color="#B6DBD8" icon="healthicons:medicines" description="pills" />
       </div>
       <div class="supply">
-        <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+        <MoleculeSupplyBox color="#B6DBD8" icon="healthicons:medicines" description="pills" />
       </div>
       <div class="supply">
-        <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+        <MoleculeSupplyBox color="#B6DBD8" icon="healthicons:medicines" description="pills" />
       </div>
       <div class="supply">
-        <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+        <MoleculeSupplyBox color="#B6DBD8" icon="healthicons:medicines" description="pills" />
       </div>
       <div class="supply">
-        <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+        <MoleculeSupplyBox color="#B6DBD8" icon="healthicons:medicines" description="pills" />
       </div>
       <div class="supply">
-        <MoleculeSupplyBox backgroundColor="#B6DBD8" icon="pills.svg" description="pills" />
+        <MoleculeSupplyBox color="#B6DBD8" icon="healthicons:medicines" description="pills" />
       </div>
     </div>
   </div>

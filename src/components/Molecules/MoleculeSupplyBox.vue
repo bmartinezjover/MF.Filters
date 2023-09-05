@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import AtomIcon from '../Atoms/AtomIcon.vue'
 import AtomBox from '../Atoms/AtomBox.vue'
+import { Icon } from '@iconify/vue';
 
 defineProps({
-  backgroundColor: {
+  color: {
     type: String,
     required: true
   },
@@ -22,7 +23,7 @@ defineProps({
   <div class="supply-box">
     <AtomBox>
       <div class="supply-content">
-        <AtomIcon class="icon" :backgroundColor="backgroundColor" :icon="icon" iconWidth="48" />
+        <Icon class="icon" icon="healthicons:medicines" width="200"  :color="color"/>
         <span class="description">
           {{ description }}
         </span>
