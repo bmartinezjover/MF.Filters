@@ -45,9 +45,6 @@
       flex-flow: column;
       align-items: center;
       justify-content: center;
-      .description {
-        margin-top: 10px;
-      }
     }
   }
 </style>
