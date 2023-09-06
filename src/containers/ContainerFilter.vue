@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import MoleculeSupplyBox from "../components/Molecules/MoleculeSupplyBox.vue";
+import AtomIcon from "../components/Atoms/AtomIcon.vue";
 import { PropType, onMounted } from "vue";
 import { FilterSection, FiltersView } from "../core/types/filters";
 import { useItem } from "../core/composables/useItem";
@@ -17,6 +18,7 @@ const {
   setCurrentView,
   getItems,
   currentView,
+  previousView,
   getSelectedSection,
 } = useItem();
 onMounted(() => {
@@ -30,6 +32,9 @@ function clickSection(sectionId: number) {
 function clickItem(itemId: number) {
   selectItem(itemId);
   setCurrentView(FiltersView.SELECTED_ITEM);
+}
+function goBack() {
+  setCurrentView(previousView.value);
 }
 </script>
 
@@ -59,6 +64,14 @@ function clickItem(itemId: number) {
             @click="clickItem(item.id)"
           />
         </div>
+      </div>
+      <div>
+        <AtomIcon
+          background-color="#fff"
+          icon="system-uicons:wrap-back"
+          icon-width="30px"
+          @click="goBack()"
+        />
       </div>
     </div>
   </div>
