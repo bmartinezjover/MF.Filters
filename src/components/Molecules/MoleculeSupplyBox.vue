@@ -46,7 +46,6 @@ defineProps({
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
     .description {
       margin-top: 10px;
     }

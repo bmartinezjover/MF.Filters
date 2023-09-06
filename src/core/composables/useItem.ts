@@ -45,6 +45,7 @@ export const useItem = function () {
 
   const sections = computed(() => $_sections);
   const currentView = computed(() => $_currentView.value);
+
   const previousView = computed(() => {
     switch ($_currentView.value) {
       case FiltersView.SELECTED_ITEM:
@@ -56,6 +57,7 @@ export const useItem = function () {
   });
   const sectionIdSelected = computed(() => $_sectionIdSelected.value);
   const itemIdSelected = computed(() => $_itemIdSelected.value);
+
   return {
     initItems,
     setCurrentView,
