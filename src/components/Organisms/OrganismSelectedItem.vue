@@ -15,6 +15,7 @@ const { getSelectedItem, getSelectedSection } = useItem();
         :color="getSelectedSection.color"
         :icon="getSelectedItem.icon"
         :description="getSelectedItem.itemName"
+        :icon-width="120"
       />
     </div>
     <div id="selected-item-information">
@@ -45,6 +46,7 @@ const { getSelectedItem, getSelectedSection } = useItem();
   width: 60%;
   #selected-item-description {
     height: 100%;
+    width: 200px;
     display: flex;
   }
   #selected-item-information {

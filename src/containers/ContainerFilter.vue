@@ -37,7 +37,11 @@ function goBack() {
 <template>
   <div id="filter">
     <div class="filter-bar">
-      <AtomInput :input-value="filterValue" @input="setNewFilterValue" />
+      <AtomInput
+        :input-value="filterValue"
+        @input="setNewFilterValue"
+        v-if="currentView !== FiltersView.SELECTED_ITEM"
+      />
     </div>
     <div class="filter-container">
       <OrganismFilterSection v-if="currentView === FiltersView.SECTIONS" />
@@ -81,6 +85,7 @@ function goBack() {
     justify-content: center;
     align-items: center;
     max-width: 600px;
+    margin-bottom: 20px;
   }
   .back-button {
     position: absolute;
