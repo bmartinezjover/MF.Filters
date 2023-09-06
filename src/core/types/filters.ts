@@ -5,7 +5,6 @@ export type ItemStock = {
 export type Item = {
   id: number;
   itemName: string;
-  stock: ItemStock;
   total: number;
   icon: string;
 };
