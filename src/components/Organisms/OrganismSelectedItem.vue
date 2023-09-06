@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import MoleculeSupplyBox from "../Molecules/MoleculeSupplyBox.vue";
-import MoleculeStockItem from "../Molecules/MoleculeStockItem.vue";
-import MoleculePickItem from "../Molecules/MoleculePickItem.vue";
-import MoleculeMoveItem from "../Molecules/MoleculeMoveItem.vue";
-import { useItem } from "../../core/composables/useItem";
+  import MoleculeSupplyBox from '../Molecules/MoleculeSupplyBox.vue'
+  import MoleculeStockItem from '../Molecules/MoleculeStockItem.vue'
+  import MoleculePickItem from '../Molecules/MoleculePickItem.vue'
+  import MoleculeMoveItem from '../Molecules/MoleculeMoveItem.vue'
+  import { useItem } from '../../core/composables/useItem'
 
-const { getSelectedItem, getSelectedSection } = useItem();
+  const { getSelectedItem, getSelectedSection } = useItem()
 </script>
 
 <template>
@@ -37,45 +37,45 @@ const { getSelectedItem, getSelectedSection } = useItem();
 </template>
 
 <style lang="scss" scoped>
-#selected-item {
-  display: flex;
-  flex-flow: row;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-  #selected-item-description {
-    height: 100%;
-    width: 200px;
-    display: flex;
-  }
-  #selected-item-information {
-    margin-left: 20px;
-    height: 100%;
+  #selected-item {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
-    width: 400px;
-    > div {
-      height: 45%;
-    }
-    .row {
-      width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    #selected-item-description {
+      height: 100%;
+      width: 200px;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      &.bottom {
-        margin: auto;
+    }
+    #selected-item-information {
+      margin-left: 20px;
+      height: 100%;
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+      width: 400px;
+      > div {
+        height: 45%;
+      }
+      .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &.bottom {
+          margin: auto;
+        }
+      }
+      .pick,
+      .move {
+        width: 45%;
+      }
+      .stock {
+        width: 60%;
+        height: 100%;
       }
     }
-    .pick,
-    .move {
-      width: 45%;
-    }
-    .stock {
-      width: 60%;
-      height: 100%;
-    }
   }
-}
 </style>

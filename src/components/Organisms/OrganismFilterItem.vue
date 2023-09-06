@@ -1,20 +1,14 @@
 <script lang="ts" setup>
-import MoleculeSupplyBox from "../Molecules/MoleculeSupplyBox.vue";
-import { FiltersView } from "../../core/types/filters";
-import { useItem } from "../../core/composables/useItem";
+  import MoleculeSupplyBox from '../Molecules/MoleculeSupplyBox.vue'
+  import { FiltersView } from '../../core/types/filters'
+  import { useItem } from '../../core/composables/useItem'
 
-const {
-  getItems,
-  setCurrentView,
-  selectItem,
-  getSectionColor,
-  getSectionIdFromItem,
-} = useItem();
+  const { getItems, setCurrentView, selectItem, getSectionColor, getSectionIdFromItem } = useItem()
 
-function clickItem(sectionId: number) {
-  selectItem(sectionId);
-  setCurrentView(FiltersView.SELECTED_ITEM);
-}
+  function clickItem(sectionId: number) {
+    selectItem(sectionId)
+    setCurrentView(FiltersView.SELECTED_ITEM)
+  }
 </script>
 
 <template>
@@ -32,19 +26,19 @@ function clickItem(sectionId: number) {
 </template>
 
 <style lang="scss" scoped>
-.supplies {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: flex-start;
-  width: 60%;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  .supply {
-    margin: 10px;
-    width: 100px;
-    height: 90px;
+  .supplies {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    .supply {
+      margin: 10px;
+      width: 100px;
+      height: 90px;
+    }
   }
-}
 </style>

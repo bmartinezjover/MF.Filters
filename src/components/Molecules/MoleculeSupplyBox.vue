@@ -1,26 +1,25 @@
 <script lang="ts" setup>
-import AtomIcon from "../Atoms/AtomIcon.vue";
-import AtomBox from "../Atoms/AtomBox.vue";
-import { Icon } from "@iconify/vue";
+  import AtomBox from '../Atoms/AtomBox.vue'
+  import { Icon } from '@iconify/vue'
 
-defineProps({
-  color: {
-    type: String,
-    required: true,
-  },
-  icon: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  iconWidth: {
-    type: Number,
-    required: true,
-  },
-});
+  defineProps({
+    color: {
+      type: String,
+      required: true,
+    },
+    icon: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    iconWidth: {
+      type: Number,
+      required: true,
+    },
+  })
 </script>
 
 <template>
@@ -37,18 +36,18 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-.supply-box {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  .supply-content {
+  .supply-box {
     display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    .description {
-      margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    .supply-content {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      .description {
+        margin-top: 10px;
+      }
     }
   }
-}
 </style>

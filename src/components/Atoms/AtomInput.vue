@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-const emits = defineEmits<{
-  (e: "input", value: string): void;
-}>();
+  const emits = defineEmits<{
+    (e: 'input', value: string): void
+  }>()
 
-defineProps({
-  inputValue: {
-    type: String,
-    default: "",
-  },
-});
+  defineProps({
+    inputValue: {
+      type: String,
+      default: '',
+    },
+  })
 
-function emitInput(event: Event): void {
-  emits("input", (event.target as HTMLInputElement).value);
-}
+  function emitInput(event: Event): void {
+    emits('input', (event.target as HTMLInputElement).value)
+  }
 </script>
 
 <template>
@@ -20,10 +20,10 @@ function emitInput(event: Event): void {
 </template>
 
 <style lang="scss" scoped>
-input[type="string"] {
-  border-radius: 20px;
-  width: 100%;
-  border: 1px solid #cccccc;
-  height: 30px;
-}
+  input[type='string'] {
+    border-radius: 20px;
+    width: 100%;
+    border: 1px solid #cccccc;
+    height: 30px;
+  }
 </style>

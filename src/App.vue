@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+  import { RouterView } from 'vue-router'
 </script>
 
 <template>
@@ -7,9 +7,9 @@ import { RouterView } from "vue-router";
 </template>
 
 <style>
-body {
-  margin: 0;
-  font-family: Roboto !important;
-  background-color: #f9f9f9;
-}
+  body {
+    margin: 0;
+    font-family: Roboto !important;
+    background-color: #f9f9f9;
+  }
 </style>

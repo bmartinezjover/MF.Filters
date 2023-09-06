@@ -1,0 +1,17 @@
+node_modules
+coverage
+tsconfig.json
+tsconfig.node.json
+package.json
+README.md
+vite.config.ts
+dist
+.vscode
+package-lock.json
+*.yml
+.dockerignore
+.env*
+sonar-project*
+doc/*
+public/*
+report*.json

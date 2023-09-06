@@ -1,73 +1,73 @@
 <script lang="ts" setup>
-import ContainerFilter from "../containers/ContainerFilter.vue";
-import { FilterSection } from "../core/types/filters";
+  import ContainerFilter from '../containers/ContainerFilter.vue'
+  import { FilterSection } from '../core/types/filters'
 
-const exampleData: FilterSection[] = [
-  {
-    id: 1,
-    groupName: "Medications",
-    color: "#B6DBD8",
-    icon: "healthicons:medicines",
-    items: [
-      {
-        id: 1,
-        itemName: "Aspirin",
-        total: 1225,
-        icon: "healthicons:medicines",
-      },
-      {
-        id: 2,
-        itemName: "Ibuprofen",
-        total: 500,
-        icon: "healthicons:medicines",
-      },
-      {
-        id: 3,
-        itemName: "Paracetamol",
-        total: 1500,
-        icon: "healthicons:medicines",
-      },
-      {
-        id: 4,
-        itemName: "Enantyum",
-        total: 1000,
-        icon: "healthicons:medicines",
-      },
-      {
-        id: 5,
-        itemName: "Nolotil",
-        total: 800,
-        icon: "healthicons:medicines",
-      },
-    ],
-  },
-  {
-    id: 2,
-    groupName: "Material",
-    color: "#B6FBD1",
-    icon: "ep:first-aid-kit",
-    items: [
-      {
-        id: 6,
-        itemName: "syringe",
-        total: 2000,
-        icon: "pepicons-pencil:syringe",
-      },
-      {
-        id: 7,
-        itemName: "bandages",
-        total: 1500,
-        icon: "game-icons:bandage-roll",
-      },
-      {
-        id: 8,
-        itemName: "scalpel",
-        total: 600,
-        icon: "game-icons:scalpel",
-      },
-    ],
-  },
-];
+  const exampleData: FilterSection[] = [
+    {
+      id: 1,
+      groupName: 'Medications',
+      color: '#B6DBD8',
+      icon: 'healthicons:medicines',
+      items: [
+        {
+          id: 1,
+          itemName: 'Aspirin',
+          total: 1225,
+          icon: 'healthicons:medicines',
+        },
+        {
+          id: 2,
+          itemName: 'Ibuprofen',
+          total: 500,
+          icon: 'healthicons:medicines',
+        },
+        {
+          id: 3,
+          itemName: 'Paracetamol',
+          total: 1500,
+          icon: 'healthicons:medicines',
+        },
+        {
+          id: 4,
+          itemName: 'Enantyum',
+          total: 1000,
+          icon: 'healthicons:medicines',
+        },
+        {
+          id: 5,
+          itemName: 'Nolotil',
+          total: 800,
+          icon: 'healthicons:medicines',
+        },
+      ],
+    },
+    {
+      id: 2,
+      groupName: 'Material',
+      color: '#B6FBD1',
+      icon: 'ep:first-aid-kit',
+      items: [
+        {
+          id: 6,
+          itemName: 'syringe',
+          total: 2000,
+          icon: 'pepicons-pencil:syringe',
+        },
+        {
+          id: 7,
+          itemName: 'bandages',
+          total: 1500,
+          icon: 'game-icons:bandage-roll',
+        },
+        {
+          id: 8,
+          itemName: 'scalpel',
+          total: 600,
+          icon: 'game-icons:scalpel',
+        },
+      ],
+    },
+  ]
 </script>
 
 <template>

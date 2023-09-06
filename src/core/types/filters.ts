@@ -1,21 +1,21 @@
 export type ItemStock = {
-  [floor: number]: number;
-};
+  [floor: number]: number
+}
 
 export type Item = {
-  id: number;
-  itemName: string;
-  total: number;
-  icon: string;
-};
+  id: number
+  itemName: string
+  total: number
+  icon: string
+}
 
 export type FilterSection = {
-  id: number;
-  groupName: string;
-  color: string;
-  icon: string;
-  items: Item[];
-};
+  id: number
+  groupName: string
+  color: string
+  icon: string
+  items: Item[]
+}
 
 export enum FiltersView {
   SECTIONS,
