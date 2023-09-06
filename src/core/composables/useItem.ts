@@ -9,7 +9,7 @@ const $_itemIdSelected = ref<number>(0);
 
 export const useItem = function () {
   const getSelectedSection = computed(() =>
-    $_sections.find((x) => x.id === $_sectionIdSelected.value)
+    $_sections.find((x) => x.id === $_sectionIdSelected.value),
   );
   const getItems = computed(() => {
     const { filterValue, getFiteredItems } = useFilter();
@@ -18,7 +18,7 @@ export const useItem = function () {
   });
 
   const getSelectedItem = computed(
-    () => getItems.value?.find((x) => x.id === $_itemIdSelected.value)
+    () => getItems.value?.find((x) => x.id === $_itemIdSelected.value),
   );
 
   function initItems(newValue: FilterSection[]) {

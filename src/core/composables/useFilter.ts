@@ -9,8 +9,8 @@ export const useFilter = function () {
 
     return sections.value.flatMap((x) =>
       x.items.filter((y) =>
-        y.itemName.toLowerCase().includes($_filterValue.value.toLowerCase())
-      )
+        y.itemName.toLowerCase().includes($_filterValue.value.toLowerCase()),
+      ),
     );
   });
   function setFilterValue(newValue: string) {
