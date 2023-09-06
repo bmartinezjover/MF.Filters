@@ -5,5 +5,5 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["importMaps.ts", "exposesMaps.ts", "vite.config.ts"]
 }
