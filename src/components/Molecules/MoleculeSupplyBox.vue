@@ -1,29 +1,29 @@
 <script lang="ts" setup>
-import AtomIcon from '../Atoms/AtomIcon.vue'
-import AtomBox from '../Atoms/AtomBox.vue'
-import { Icon } from '@iconify/vue';
+import AtomIcon from "../Atoms/AtomIcon.vue";
+import AtomBox from "../Atoms/AtomBox.vue";
+import { Icon } from "@iconify/vue";
 
 defineProps({
   color: {
     type: String,
-    required: true
+    required: true,
   },
   icon: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div class="supply-box">
     <AtomBox>
       <div class="supply-content">
-        <Icon class="icon" icon="healthicons:medicines" width="200"  :color="color"/>
+        <Icon class="icon" :icon="icon" width="200" :color="color" />
         <span class="description">
           {{ description }}
         </span>
