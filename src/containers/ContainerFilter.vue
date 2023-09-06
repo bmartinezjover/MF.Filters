@@ -15,16 +15,7 @@ const props = defineProps({
     required: true,
   },
 });
-const {
-  initItems,
-  selectItem,
-  selectSection,
-  setCurrentView,
-  getItems,
-  currentView,
-  previousView,
-  getSelectedSection,
-} = useItem();
+const { initItems, setCurrentView, currentView, previousView } = useItem();
 const { setFilterValue, filterValue } = useFilter();
 onMounted(() => {
   initItems(props.sections);
@@ -48,35 +39,39 @@ function goBack() {
     <div class="filter-bar">
       <AtomInput :input-value="filterValue" @input="setNewFilterValue" />
     </div>
-    <div class="supplies">
+    <div class="filter-container">
       <OrganismFilterSection v-if="currentView === FiltersView.SECTIONS" />
       <OrganismFilterItem v-if="currentView === FiltersView.ITEMS" />
       <OrganismSelectedItem v-if="currentView === FiltersView.SELECTED_ITEM" />
     </div>
-    <AtomIcon
-      background-color="#fff"
-      icon="system-uicons:wrap-back"
-      icon-width="30px"
-      @click="goBack()"
-    />
+    <div class="back-button">
+      <AtomIcon
+        background-color="#fff"
+        icon="system-uicons:wrap-back"
+        icon-width="30px"
+        @click="goBack()"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 #filter {
-  width: 100vw;
+  margin: auto;
+  width: 60%;
   height: 100vh;
   flex-flow: column;
   justify-content: flex-end;
   align-items: center;
   display: flex;
-  .supplies {
+  position: relative;
+  .filter-container {
     height: 300px;
     margin-bottom: 30px;
     width: 100%;
     flex-flow: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
   }
   .filter-bar {
@@ -86,6 +81,11 @@ function goBack() {
     justify-content: center;
     align-items: center;
     max-width: 600px;
+  }
+  .back-button {
+    position: absolute;
+    right: 34px;
+    bottom: 10px;
   }
 }
 </style>

@@ -24,6 +24,7 @@ function clickItem(sectionId: number) {
         :color="getSectionColor(getSectionIdFromItem(item.id))"
         :icon="item.icon"
         :description="item.itemName"
+        :icon-width="60"
         @click="clickItem(item.id)"
       />
     </div>
@@ -35,11 +36,15 @@ function clickItem(sectionId: number) {
   display: flex;
   flex-flow: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 60%;
   flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
   .supply {
     margin: 10px;
+    width: 100px;
+    height: 90px;
   }
 }
 </style>

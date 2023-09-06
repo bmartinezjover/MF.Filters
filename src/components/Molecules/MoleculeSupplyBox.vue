@@ -16,6 +16,10 @@ defineProps({
     type: String,
     required: true,
   },
+  iconWidth: {
+    type: Number,
+    required: true,
+  },
 });
 </script>
 
@@ -23,7 +27,7 @@ defineProps({
   <div class="supply-box">
     <AtomBox>
       <div class="supply-content">
-        <Icon class="icon" :icon="icon" width="200" :color="color" />
+        <Icon class="icon" :icon="icon" :width="iconWidth" :color="color" />
         <span class="description">
           {{ description }}
         </span>
@@ -37,12 +41,12 @@ defineProps({
   display: flex;
   width: 100%;
   height: 100%;
-
   .supply-content {
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    padding: 10px;
     .description {
       margin-top: 10px;
     }

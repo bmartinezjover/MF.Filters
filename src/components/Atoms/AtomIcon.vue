@@ -17,9 +17,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="icon">
-    <Icon :icon="props.icon" :width="props.iconWidth" />
-  </div>
+  <Icon :icon="props.icon" :width="props.iconWidth" />
 </template>
 
 <style lang="scss" scoped>
@@ -27,7 +25,6 @@ const props = defineProps({
   display: flex;
   background-color: v-bind("backgroundColor");
   border: 1px solid #cccccc;
-  padding: 15px;
   border-radius: 10px;
   justify-content: center;
   align-items: center;

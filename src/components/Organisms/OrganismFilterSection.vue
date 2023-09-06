@@ -21,6 +21,7 @@ function clickSection(sectionId: number) {
       <MoleculeSupplyBox
         :color="section.color"
         :icon="section.icon"
+        :icon-width="100"
         :description="section.groupName"
         @click="clickSection(section.id)"
       />
