@@ -1,41 +1,40 @@
 <script lang="ts" setup>
+import { Icon } from "@iconify/vue";
 const props = defineProps({
   backgroundColor: {
     type: String,
-    required: true
+    required: true,
   },
   icon: {
     type: String,
-    required: true
+    required: true,
   },
   iconWidth: {
     type: String,
-    required: true
-  }
-})
-
-function getImg() {
-  return new URL(`/src/assets/icons/${props.icon}`, import.meta.url).toString()
-}
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div class="icon">
-    <img :src="getImg()" />
+    <Icon :icon="props.icon" :width="props.iconWidth" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .icon {
   display: flex;
-  background-color: v-bind('backgroundColor');
-  padding: 25px;
-  border-radius: 50%;
+  background-color: v-bind("backgroundColor");
+  border: 1px solid #cccccc;
+  padding: 15px;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
   margin: 0;
-  img {
-    width: v-bind('iconWidth + `px`');
+  cursor: pointer;
+  &:hover {
+    background-color: #a6d0e1;
   }
 }
 </style>

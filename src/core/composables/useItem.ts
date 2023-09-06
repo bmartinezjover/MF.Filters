@@ -45,6 +45,15 @@ export const useItem = function () {
 
   const sections = computed(() => $_sections);
   const currentView = computed(() => $_currentView.value);
+  const previousView = computed(() => {
+    switch ($_currentView.value) {
+      case FiltersView.SELECTED_ITEM:
+        return FiltersView.ITEMS;
+      case FiltersView.ITEMS:
+      default:
+        return FiltersView.SECTIONS;
+    }
+  });
   const sectionIdSelected = computed(() => $_sectionIdSelected.value);
   const itemIdSelected = computed(() => $_itemIdSelected.value);
   return {
@@ -61,5 +70,6 @@ export const useItem = function () {
     currentView,
     sectionIdSelected,
     itemIdSelected,
+    previousView,
   };
 };

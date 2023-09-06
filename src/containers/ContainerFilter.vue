@@ -3,6 +3,7 @@ import OrganismFilterSection from "../components/Organisms/OrganismFilterSection
 import OrganismFilterItem from "../components/Organisms/OrganismFilterItem.vue";
 import OrganismSelectedItem from "../components/Organisms/OrganismSelectedItem.vue";
 import AtomInput from "../components/Atoms/AtomInput.vue";
+import AtomIcon from "../components/Atoms/AtomIcon.vue";
 import { PropType, onMounted } from "vue";
 import { FilterSection, FiltersView } from "../core/types/filters";
 import { useItem } from "../core/composables/useItem";
@@ -14,7 +15,16 @@ const props = defineProps({
     required: true,
   },
 });
-const { initItems, currentView, setCurrentView } = useItem();
+const {
+  initItems,
+  selectItem,
+  selectSection,
+  setCurrentView,
+  getItems,
+  currentView,
+  previousView,
+  getSelectedSection,
+} = useItem();
 const { setFilterValue, filterValue } = useFilter();
 onMounted(() => {
   initItems(props.sections);
@@ -28,6 +38,9 @@ function setNewFilterValue(newValue: string) {
     setCurrentView(FiltersView.SECTIONS);
   }
 }
+function goBack() {
+  setCurrentView(previousView.value);
+}
 </script>
 
 <template>
@@ -40,6 +53,12 @@ function setNewFilterValue(newValue: string) {
       <OrganismFilterItem v-if="currentView === FiltersView.ITEMS" />
       <OrganismSelectedItem v-if="currentView === FiltersView.SELECTED_ITEM" />
     </div>
+    <AtomIcon
+      background-color="#fff"
+      icon="system-uicons:wrap-back"
+      icon-width="30px"
+      @click="goBack()"
+    />
   </div>
 </template>
 
