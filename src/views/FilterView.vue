@@ -44,7 +44,7 @@
     {
       id: 2,
       groupName: 'Material',
-      color: '#B6FBD1',
+      color: '#4682B4',
       icon: 'ep:first-aid-kit',
       items: [
         {

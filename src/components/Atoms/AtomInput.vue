@@ -25,5 +25,6 @@
     width: 100%;
     border: 1px solid #cccccc;
     height: 30px;
+    padding-left: 15px;
   }
 </style>

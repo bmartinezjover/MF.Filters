@@ -2,14 +2,67 @@
   "filterItems": [
     {
       "id": 1,
-      "groupName": "pills",
+      "groupName": "Medications",
       "color": "#B6DBD8",
-      "items": {
-        "id": 1,
-        "itemName": "pills",
-        "stock": { "1": 200, "2": 150 },
-        "total": 500
-      }
+      "icon": "healthicons:medicines",
+      "items": [
+        {
+          "id": 1,
+          "itemName": "Aspirin",
+          "total": 1225,
+          "icon": "healthicons:medicines"
+        },
+        {
+          "id": 2,
+          "itemName": "Ibuprofen",
+          "total": 500,
+          "icon": "healthicons:medicines"
+        },
+        {
+          "id": 3,
+          "itemName": "Paracetamol",
+          "total": 1500,
+          "icon": "healthicons:medicines"
+        },
+        {
+          "id": 4,
+          "itemName": "Enantyum",
+          "total": 1000,
+          "icon": "healthicons:medicines"
+        },
+        {
+          "id": 5,
+          "itemName": "Nolotil",
+          "total": 800,
+          "icon": "healthicons:medicines"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "groupName": "Material",
+      "color": "#4682B4",
+      "icon": "ep:first-aid-kit",
+      "items": [
+        {
+          "id": 6,
+          "itemName": "syringe",
+          "total": 2000,
+          "icon": "pepicons-pencil:syringe"
+        },
+        {
+          "id": 7,
+          "itemName": "bandages",
+          "total": 1500,
+          "icon": "game-icons:bandage-roll"
+        },
+        {
+          "id": 8,
+          "itemName": "scalpel",
+          "total": 600,
+          "icon": "game-icons:scalpel"
+        }
+      ]
     }
   ]
 }
