@@ -34,6 +34,9 @@ const fillColor = computed(() => {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  h3 {
+    margin: 0;
+  }
   .percent-circle {
     position: relative;
     .remaining {

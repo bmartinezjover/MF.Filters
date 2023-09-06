@@ -1,8 +1,12 @@
 <script lang="ts" setup>
-import MoleculeSupplyBox from "../components/Molecules/MoleculeSupplyBox.vue";
+import OrganismFilterSection from "../components/Organisms/OrganismFilterSection.vue";
+import OrganismFilterItem from "../components/Organisms/OrganismFilterItem.vue";
+import OrganismSelectedItem from "../components/Organisms/OrganismSelectedItem.vue";
+import AtomInput from "../components/Atoms/AtomInput.vue";
 import { PropType, onMounted } from "vue";
 import { FilterSection, FiltersView } from "../core/types/filters";
 import { useItem } from "../core/composables/useItem";
+import { useFilter } from "../core/composables/useFilter";
 
 const props = defineProps({
   sections: {
@@ -10,56 +14,31 @@ const props = defineProps({
     required: true,
   },
 });
-const {
-  initItems,
-  selectItem,
-  selectSection,
-  setCurrentView,
-  getItems,
-  currentView,
-  getSelectedSection,
-} = useItem();
+const { initItems, currentView, setCurrentView } = useItem();
+const { setFilterValue, filterValue } = useFilter();
 onMounted(() => {
   initItems(props.sections);
 });
 
-function clickSection(sectionId: number) {
-  selectSection(sectionId);
-  setCurrentView(FiltersView.ITEMS);
-}
-function clickItem(itemId: number) {
-  selectItem(itemId);
-  setCurrentView(FiltersView.SELECTED_ITEM);
+function setNewFilterValue(newValue: string) {
+  setFilterValue(newValue);
+  if (newValue) {
+    setCurrentView(FiltersView.ITEMS);
+  } else {
+    setCurrentView(FiltersView.SECTIONS);
+  }
 }
 </script>
 
 <template>
   <div id="filter">
+    <div class="filter-bar">
+      <AtomInput :input-value="filterValue" @input="setNewFilterValue" />
+    </div>
     <div class="supplies">
-      <div class="sections" v-if="currentView === FiltersView.SECTIONS">
-        <div
-          class="section"
-          v-for="section in sections"
-          :key="`section_${section.id}`"
-        >
-          <MoleculeSupplyBox
-            :color="section.color"
-            :icon="section.icon"
-            :description="section.groupName"
-            @click="clickSection(section.id)"
-          />
-        </div>
-      </div>
-      <div class="items" v-else>
-        <div class="item" v-for="item in getItems" :key="`item_${item.id}`">
-          <MoleculeSupplyBox
-            :color="getSelectedSection.color"
-            :icon="item.icon"
-            :description="item.itemName"
-            @click="clickItem(item.id)"
-          />
-        </div>
-      </div>
+      <OrganismFilterSection v-if="currentView === FiltersView.SECTIONS" />
+      <OrganismFilterItem v-if="currentView === FiltersView.ITEMS" />
+      <OrganismSelectedItem v-if="currentView === FiltersView.SELECTED_ITEM" />
     </div>
   </div>
 </template>
@@ -68,31 +47,26 @@ function clickItem(itemId: number) {
 #filter {
   width: 100vw;
   height: 100vh;
-  background-color: #f9f9f9;
-  flex-flow: row;
-  justify-content: center;
-  align-items: flex-end;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
   display: flex;
   .supplies {
+    height: 300px;
+    margin-bottom: 30px;
     width: 100%;
     flex-flow: row;
     justify-content: center;
     align-items: center;
     display: flex;
-    .sections,
-    .items {
-      display: flex;
-      flex-flow: row;
-      justify-content: center;
-      align-items: center;
-      width: 60%;
-      flex-wrap: wrap;
-    }
-    .section,
-    .item {
-      margin: 10px;
-      cursor: pointer;
-    }
+  }
+  .filter-bar {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
   }
 }
 </style>

@@ -10,7 +10,7 @@ function changeNumberToMove(num: number) {
     numberToMove.value += num;
   }
 }
-const showSelectRoom = ref(true);
+const showSelectRoom = ref(false);
 </script>
 
 <template>
@@ -20,7 +20,7 @@ const showSelectRoom = ref(true);
         <h3>Please select zone to start moving</h3>
       </div>
       <div class="move-box" v-else>
-        <h3>Pick quantity</h3>
+        <h3>Move quantity</h3>
         <div class="quantity">
           <div class="minus" @click="changeNumberToMove(-1)">
             <Icon color="#d70000" icon="zondicons:minus-solid" width="17.5px" />

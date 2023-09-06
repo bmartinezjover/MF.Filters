@@ -1,52 +1,43 @@
 <script lang="ts" setup>
-import MoleculeSupplyBox from '../Molecules/MoleculeSupplyBox.vue'
+import MoleculeSupplyBox from "../Molecules/MoleculeSupplyBox.vue";
+import { FiltersView } from "../../core/types/filters";
+import { useItem } from "../../core/composables/useItem";
+
+const { selectSection, setCurrentView, sections } = useItem();
+
+function clickSection(sectionId: number) {
+  selectSection(sectionId);
+  setCurrentView(FiltersView.ITEMS);
+}
 </script>
 
 <template>
-  <div id="filter">
-    <div class="supplies">
-      <div class="supply">
-        <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
-      </div>
-      <div class="supply">
-        <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
-      </div>
-      <div class="supply">
-        <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
-      </div>
-      <div class="supply">
-        <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
-      </div>
-      <div class="supply">
-        <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
-      </div>
-      <div class="supply">
-        <MoleculeSupplyBox color="#B6DBD8" icon="pills.svg" description="pills" />
-      </div>
+  <div id="supplies">
+    <div
+      class="supply"
+      v-for="section in sections"
+      :key="`section_${section.id}`"
+    >
+      <MoleculeSupplyBox
+        :color="section.color"
+        :icon="section.icon"
+        :description="section.groupName"
+        @click="clickSection(section.id)"
+      />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-#filter {
-  width: 100vw;
-  height: 100vh;
-  background-color: #f9f9f9;
+#supplies {
+  display: flex;
   flex-flow: row;
   justify-content: center;
-  align-items: flex-end;
-  display: flex;
-  .supplies {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    flex-wrap: wrap;
-    .supply {
-      min-width: 25%;
-      margin: 10px;
-    }
+  align-items: center;
+  width: 60%;
+  flex-wrap: wrap;
+  .supply {
+    margin: 10px;
   }
 }
 </style>

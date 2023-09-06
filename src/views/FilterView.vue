@@ -29,31 +29,5 @@ const exampleData: FilterSection[] = [
 </script>
 
 <template>
-  <div id="filter">
-    <ContainerFilter :sections="exampleData" />
-  </div>
+  <ContainerFilter :sections="exampleData" />
 </template>
-
-<style lang="scss" scoped>
-#filter {
-  width: 100vw;
-  height: 100vh;
-  background-color: #f9f9f9;
-  flex-flow: row;
-  justify-content: center;
-  align-items: flex-end;
-  display: flex;
-  .supplies {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    flex-wrap: wrap;
-    .supply {
-      min-width: 25%;
-      margin: 10px;
-    }
-  }
-}
-</style>

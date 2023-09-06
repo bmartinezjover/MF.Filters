@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <slot></slot>
+    <div class="container">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -9,7 +11,6 @@
   border: 1px solid #cccccc;
   border-radius: 10px;
   background-color: #fff;
-  padding: 10px 25px;
   display: flex;
   align-items: center;
   justify-content: center;
